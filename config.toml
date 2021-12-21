@@ -1,0 +1,4 @@
+baseURL = 'https://blog.tomontheinternet.com/'
+languageCode = 'en-us'
+title = 'Tom on the Internet Weblog'
+theme = 'ananke'
