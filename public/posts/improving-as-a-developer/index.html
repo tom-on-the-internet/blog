@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Improving as a Developer | Tom on the Internet Weblog</title>
+  <link rel = 'canonical' href = 'https://blog.tomontheinternet.com/posts/improving-as-a-developer/'>
+  <meta name="description" content="My name is Tom. This is my blog.
+
+If you read anything you like here, please [let me know](mailto:tom@tomontheinternet.com).
+
+You can learn more about me [on my website](https://tomontheinternet.com).">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Improving as a Developer" />
+<meta property="og:description" content="A little while back two things happened to me that made me wonder how I was doing as a software developer.
+ I&rsquo;d taken part in a coding challenge that was meant to be simple, but I&rsquo;d done pretty poorly. I started noticing that the code I was writing was exactly the type of code I encouraged others not to write earlier in my career.  I started wondering&hellip;
+Am I a good software developer?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tomontheinternet.com/posts/improving-as-a-developer/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-03T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Improving as a Developer"/>
+<meta name="twitter:description" content="A little while back two things happened to me that made me wonder how I was doing as a software developer.
+ I&rsquo;d taken part in a coding challenge that was meant to be simple, but I&rsquo;d done pretty poorly. I started noticing that the code I was writing was exactly the type of code I encouraged others not to write earlier in my career.  I started wondering&hellip;
+Am I a good software developer?"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://blog.tomontheinternet.com/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://blog.tomontheinternet.com/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://blog.tomontheinternet.com/posts/one-to-many/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&text=Improving%20as%20a%20Developer" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&title=Improving%20as%20a%20Developer" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&is_video=false&description=Improving%20as%20a%20Developer" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Improving%20as%20a%20Developer&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&title=Improving%20as%20a%20Developer" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&title=Improving%20as%20a%20Developer" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&name=Improving%20as%20a%20Developer&description=A%20little%20while%20back%20two%20things%20happened%20to%20me%20that%20made%20me%20wonder%20how%20I%20was%20doing%20as%20a%20software%20developer.%0a%20I%26rsquo%3bd%20taken%20part%20in%20a%20coding%20challenge%20that%20was%20meant%20to%20be%20simple%2c%20but%20I%26rsquo%3bd%20done%20pretty%20poorly.%20I%20started%20noticing%20that%20the%20code%20I%20was%20writing%20was%20exactly%20the%20type%20of%20code%20I%20encouraged%20others%20not%20to%20write%20earlier%20in%20my%20career.%20%20I%20started%20wondering%26hellip%3b%0aAm%20I%20a%20good%20software%20developer%3f" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&t=Improving%20as%20a%20Developer" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Improving as a Developer
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2021-06-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-03</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#reaching-out">Reaching Out</a></li>
+    <li><a href="#a-quick-note-about-me">A Quick Note About Me</a></li>
+    <li><a href="#how-do-you-know-if-youre-improving">How Do You Know If You&rsquo;re Improving</a></li>
+    <li><a href="#how-to-improve">How To Improve</a></li>
+    <li><a href="#should-we-wrap-up">Should We Wrap Up</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="content" itemprop="articleBody">
+      <p>A little while back <strong>two</strong> things happened to me that made me wonder how I was doing as a software developer.</p>
+<ol>
+<li>I&rsquo;d taken part in a coding challenge that was meant to be simple, but I&rsquo;d done pretty poorly.</li>
+<li>I started noticing that the code I was writing was exactly the type of code I encouraged others <em>not</em> to write earlier in my career.</li>
+</ol>
+<p>I started wondering&hellip;</p>
+<p><strong>Am I a good software developer?</strong></p>
+<p><strong>Am I getting better?</strong></p>
+<h2 id="reaching-out">Reaching Out</h2>
+<p><a href="https://www.bikeshed.fm/">The Bike Shed</a> is a podcast cast about software development, and it&rsquo;s one of my favorite podcasts. The hosts <a href="https://twitter.com/christoomey">Chris</a> and <a href="https://twitter.com/SViccari">Steph</a> do an incredible job of having interesting things to talk about each week. And, as luck would have it, they were asking for listener questions.</p>
+<p>I wrote to them.</p>
+<blockquote>
+<p>How do you know you&rsquo;re improving as developers? Is your improvement consistent? Are there regressions? I find myself having very different views about code than I did even a year ago. In some cases, I write code now in a way that I would have criticized not too long ago. For example, I started writing a lot more comments. I used to think a well-named variable obviated the need for comments. While it feels like I&rsquo;m improving, I have no way of measuring the improvement. It&rsquo;s only a gut feeling. Thanks. Love the show.</p>
+</blockquote>
+<p>On May 25th, 2021, they read my question on the podcast and shared their thoughts. I was blown away by the level of thought that went into their responses. I decided to summarize their ideas and am presenting it here for my own use, but hopefully for yours, too. I&rsquo;m combining both Chris and Steph&rsquo;s ideas as there is a lot of agreement between the two.</p>
+<p><a href="https://www.bikeshed.fm/294">Here&rsquo;s a link to the episode.</a> I recommend listening to it because my summary doesn&rsquo;t capture everything.</p>
+<h2 id="a-quick-note-about-me">A Quick Note About Me</h2>
+<p>The way I understand Chris and Steph&rsquo;s advice is coloured by my own experiences.</p>
+<p>I am a 39 years old, but I only have 4 years of experience in the software development. I switched careers from teaching English to software development at the age of 35. I&rsquo;ve only ever worked at one company. I write software for the web. I&rsquo;m a self taught (or blog internet-taught) developer.</p>
+<h2 id="how-do-you-know-if-youre-improving">How Do You Know If You&rsquo;re Improving</h2>
+<p>I&rsquo;ve <strong>bolded</strong> ideas that I found particularly useful.</p>
+<ul>
+<li>You are becoming more comfortable with, and faster at, the work that you&rsquo;re doing.</li>
+<li>Your time estimates are becoming more accurate.</li>
+<li><strong>People are more often coming to you for help.</strong> (Tom note: <em>I really like this way of measuring your skill level. If no one asks for your help, it might be an indication that they don&rsquo;t see you as knowledgeable. It might also mean they think you&rsquo;re a jerk. More on that later.</em>)</li>
+<li>You are given more responsibilities.</li>
+<li><strong>You write robust code that doesn&rsquo;t need to be tweaked to handle cases you hadn&rsquo;t thought about, and doesn&rsquo;t introduce bugs.</strong> (Tom note: <em>This was interesting to think about. There&rsquo;s a lot of code that I&rsquo;ve written that I never go back to because it just works. But because I never have to revisit it, I forget how well it&rsquo;s working. It might be worthwhile to keep a list of things I&rsquo;ve built that just keep on working.</em>)</li>
+<li>When developers have to work with your code months after you wrote it, they find it easy to read, change, and extend.</li>
+<li>You feel confident taking on features that are outside of your comfort zone. (Tom note: <em>It can be a challenge getting assigned tasks that are outside your comfort zone because you have never build anything like it before. Definitely worth talking to your manager about.</em>)</li>
+<li>You are able to unblock yourself. (Tom note: <em>A manager once told me that a sign of a senior developer is that when they can&rsquo;t get a library to work, they look at the library code to see how it works. This feels like the same idea. Knowing what to do to get yourself unblocked.</em>)</li>
+<li>You are able to balance code quality and speed, and determine what features should be part of an MVP, and what can come later.</li>
+<li><strong>You are able to translate business requirements to technical requirements, and to help the product team understand the trade-offs in different approaches.</strong> (Tom note: <em>I found this surprisingly difficult in my first couple years as a developer. I just wasn&rsquo;t comfortable enough with the technical concepts to be able explain trade-offs.</em>)</li>
+<li><strong>You get better at determining what should be public and what should be private when building an API. You understand why these things matter when other developers will interact with them.</strong></li>
+<li>You write better, more important tests because you know what&rsquo;s important to test.</li>
+<li>You look back at code you wrote months ago and see that you&rsquo;ve improved. But, hopefully, as you progress in your career you aren&rsquo;t <em>as</em> unhappy with the code you wrote a few months earlier.</li>
+<li><strong>Ask your manager if you are improving.</strong> (Tom note: <em>This is good advice, but there are reasons people might not follow it. There were times at my company when we had very few developers. We were an early-stage start up. At that time it didn&rsquo;t feel like it made sense to have formal meetings with my manager. I also know developers who do not want to ask their manager if they are improving because they are afraid they&rsquo;ll find out that the manger thinks they are not improving.</em>)</li>
+</ul>
+<h2 id="how-to-improve">How To Improve</h2>
+<ul>
+<li>Explore different languages and frameworks. (Tom note: <em>TypeScript has had a huge impact on my PHP code. Go has made me reconsider so much I thought I new about programming.</em>)</li>
+<li>Teach others how to code. Even if it&rsquo;s just a lunch and learn.</li>
+<li>Pair program. (Tom note: <em>Early in my career I had a bad experience with pair programming. It really soured me to the idea. But I think it&rsquo;s time to revisit it.</em>)</li>
+<li>Don&rsquo;t be afraid to write code quickly and get feedback on it. The first draft doesn&rsquo;t have to be perfect. The sooner you get eyes on it, the sooner you can improve it.</li>
+<li>Decide on how you want to improve, and figure out way to get there that you can measure.</li>
+</ul>
+<h2 id="should-we-wrap-up">Should We Wrap Up</h2>
+<p>It was amazing listening to Chris and Steph&rsquo;s thoughts on my question. Their advice for measuring improvement is split between ways of becoming a better &ldquo;coder&rdquo; and ways of becoming a more useful team member (sort of a hard skill vs soft skills split). I really like this. I have a tendency to focus strictly on the technical aspects of becoming a better developer, but as I progress in my career it&rsquo;s becoming obvious that I&rsquo;ll need to spend time developing leadership skills, too.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+      </ul>
+    </div>
+
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&text=Improving%20as%20a%20Developer" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&title=Improving%20as%20a%20Developer" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&is_video=false&description=Improving%20as%20a%20Developer" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Improving%20as%20a%20Developer&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&title=Improving%20as%20a%20Developer" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&title=Improving%20as%20a%20Developer" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&name=Improving%20as%20a%20Developer&description=A%20little%20while%20back%20two%20things%20happened%20to%20me%20that%20made%20me%20wonder%20how%20I%20was%20doing%20as%20a%20software%20developer.%0a%20I%26rsquo%3bd%20taken%20part%20in%20a%20coding%20challenge%20that%20was%20meant%20to%20be%20simple%2c%20but%20I%26rsquo%3bd%20done%20pretty%20poorly.%20I%20started%20noticing%20that%20the%20code%20I%20was%20writing%20was%20exactly%20the%20type%20of%20code%20I%20encouraged%20others%20not%20to%20write%20earlier%20in%20my%20career.%20%20I%20started%20wondering%26hellip%3b%0aAm%20I%20a%20good%20software%20developer%3f" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fimproving-as-a-developer%2f&t=Improving%20as%20a%20Developer" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Tom on the Internet Weblog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

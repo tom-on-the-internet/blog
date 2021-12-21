@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Hack - Get to Know Your Browser | Tom on the Internet Weblog</title>
+  <link rel = 'canonical' href = 'https://blog.tomontheinternet.com/posts/hack-game/'>
+  <meta name="description" content="My name is Tom. This is my blog.
+
+If you read anything you like here, please [let me know](mailto:tom@tomontheinternet.com).
+
+You can learn more about me [on my website](https://tomontheinternet.com).">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Hack - Get to Know Your Browser" />
+<meta property="og:description" content="[A new version of Hack is in the works.]
+A couple months ago I started feeling self-concious about my command line Linux skills. There are levels to these things, you see, and I started feeling like I was stuck on level 2 or 3. I could navigate, update files, ssh into servers&hellip; but not too much else.
+A trip to Reddit told me that there was a game called Bandit that can help you improve your command line skills." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tomontheinternet.com/posts/hack-game/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-01-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-01-09T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hack - Get to Know Your Browser"/>
+<meta name="twitter:description" content="[A new version of Hack is in the works.]
+A couple months ago I started feeling self-concious about my command line Linux skills. There are levels to these things, you see, and I started feeling like I was stuck on level 2 or 3. I could navigate, update files, ssh into servers&hellip; but not too much else.
+A trip to Reddit told me that there was a game called Bandit that can help you improve your command line skills."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://blog.tomontheinternet.com/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://blog.tomontheinternet.com/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://blog.tomontheinternet.com/posts/how-my-blog-worked/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://blog.tomontheinternet.com/posts/hack-on-reddit/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&text=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&title=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&is_video=false&description=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Hack%20-%20Get%20to%20Know%20Your%20Browser&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&title=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&title=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&name=Hack%20-%20Get%20to%20Know%20Your%20Browser&description=%5bA%20new%20version%20of%20Hack%20is%20in%20the%20works.%5d%0aA%20couple%20months%20ago%20I%20started%20feeling%20self-concious%20about%20my%20command%20line%20Linux%20skills.%20There%20are%20levels%20to%20these%20things%2c%20you%20see%2c%20and%20I%20started%20feeling%20like%20I%20was%20stuck%20on%20level%202%20or%203.%20I%20could%20navigate%2c%20update%20files%2c%20ssh%20into%20servers%26hellip%3b%20but%20not%20too%20much%20else.%0aA%20trip%20to%20Reddit%20told%20me%20that%20there%20was%20a%20game%20called%20Bandit%20that%20can%20help%20you%20improve%20your%20command%20line%20skills." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&t=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Hack - Get to Know Your Browser
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2019-01-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-01-09</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#time-for-a-side-project">Time for a side project</a></li>
+    <li><a href="#what-hack-teaches">What Hack teaches</a></li>
+    <li><a href="#technical-details">Technical details</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="content" itemprop="articleBody">
+      <p><strong>[A new version of Hack is in the works.]</strong></p>
+<p>A couple months ago I started feeling self-concious about my command line Linux skills. There are levels to these things, you see, and I started feeling like I was stuck on level 2 or 3. I could navigate, update files, ssh into servers&hellip; but not too much else.</p>
+<p>A trip to Reddit told me that there was a game called <a href="http://overthewire.org/wargames/bandit/">Bandit</a> that can help you improve your command line skills. The game is simple. Each level requires you to log in to a server and find the password for the next level. Finding the password gets progressively harder, but along the way you learn about ssh, ncat, piping, archiving, permissions, bash scripts, git, passwords, and a lot more. I strongly recommend it to anyone who wants go learn a bit more about the command line.</p>
+<h2 id="time-for-a-side-project">Time for a side project</h2>
+<p>Bandit inspired me to try and create a little hacking game of my own. I called it Hack. Hack is similar to Bandit in that each level is designed to make you learn something about how your browser works. Completing the level moves you to the next level until you complete the game. Hack is hidden in plain sight on the front page on this site. I hid it so that non developers wouldn&rsquo;t accidentally find it.</p>
+<h2 id="what-hack-teaches">What Hack teaches</h2>
+<p>Hack, in its current iteration, teaches four browser concepts.</p>
+<ol>
+<li>You can inspect DOM elements and see how they are put together.</li>
+<li>You can use all the JavaScript functions of any website you are on.</li>
+<li>You can look at the responses in the network tab to see what data the server is giving you.</li>
+<li>You can look at the requests in the network tab to see how the website is speaking to the server.</li>
+</ol>
+<h2 id="technical-details">Technical details</h2>
+<p>Hack is one of those projects that I thought would be a lot smaller than it turned out to be. Hack is just vanilla HTML, CSS and JS. I used ES6 classes to make creating levels easier. Each level class extends a base level class that contains much of the game logic. The audio is its own class and the terminal is, too. The radio is just a bunch of audio tags puppeteered by JavaScript.</p>
+<p>It&rsquo;s all pretty simple, but it also started to feel a bit unwieldy. Creating a new level is pretty easy because the code is extensible, but if I were to do it all over again I would use TypeScript and a front-end framework. TypeScript&rsquo;s abstract classes and object properties would have come in handy when creating the base level class. A framework would have helped with view encapsulation.</p>
+<p>The back end of Hack is Laravel and the code isn&rsquo;t complicated. Some levels in Hack don&rsquo;t use the back end at all.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+      </ul>
+    </div>
+
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&text=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&title=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&is_video=false&description=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Hack%20-%20Get%20to%20Know%20Your%20Browser&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&title=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&title=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&name=Hack%20-%20Get%20to%20Know%20Your%20Browser&description=%5bA%20new%20version%20of%20Hack%20is%20in%20the%20works.%5d%0aA%20couple%20months%20ago%20I%20started%20feeling%20self-concious%20about%20my%20command%20line%20Linux%20skills.%20There%20are%20levels%20to%20these%20things%2c%20you%20see%2c%20and%20I%20started%20feeling%20like%20I%20was%20stuck%20on%20level%202%20or%203.%20I%20could%20navigate%2c%20update%20files%2c%20ssh%20into%20servers%26hellip%3b%20but%20not%20too%20much%20else.%0aA%20trip%20to%20Reddit%20told%20me%20that%20there%20was%20a%20game%20called%20Bandit%20that%20can%20help%20you%20improve%20your%20command%20line%20skills." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fhack-game%2f&t=Hack%20-%20Get%20to%20Know%20Your%20Browser" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Tom on the Internet Weblog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> One to Many | Tom on the Internet Weblog</title>
+  <link rel = 'canonical' href = 'https://blog.tomontheinternet.com/posts/one-to-many/'>
+  <meta name="description" content="My name is Tom. This is my blog.
+
+If you read anything you like here, please [let me know](mailto:tom@tomontheinternet.com).
+
+You can learn more about me [on my website](https://tomontheinternet.com).">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="One to Many" />
+<meta property="og:description" content="In this blog post I talk about how my relationship to my sons feels like data modeling. I don&rsquo;t know why I felt like writing about this, but I couldn&rsquo;t stop thinking about it so I wrote it down.
+I don&rsquo;t cover my wife&rsquo;s relationships&#39; with our sons, but rest assured she&rsquo;s very much a part of everything I write about below.
+Relationships I knew having a kid would change my life." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tomontheinternet.com/posts/one-to-many/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-25T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="One to Many"/>
+<meta name="twitter:description" content="In this blog post I talk about how my relationship to my sons feels like data modeling. I don&rsquo;t know why I felt like writing about this, but I couldn&rsquo;t stop thinking about it so I wrote it down.
+I don&rsquo;t cover my wife&rsquo;s relationships&#39; with our sons, but rest assured she&rsquo;s very much a part of everything I write about below.
+Relationships I knew having a kid would change my life."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://blog.tomontheinternet.com/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://blog.tomontheinternet.com/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://blog.tomontheinternet.com/posts/vim-new-file-same-directory/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://blog.tomontheinternet.com/posts/improving-as-a-developer/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&text=One%20to%20Many" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&title=One%20to%20Many" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&is_video=false&description=One%20to%20Many" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=One%20to%20Many&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&title=One%20to%20Many" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&title=One%20to%20Many" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&name=One%20to%20Many&description=In%20this%20blog%20post%20I%20talk%20about%20how%20my%20relationship%20to%20my%20sons%20feels%20like%20data%20modeling.%20I%20don%26rsquo%3bt%20know%20why%20I%20felt%20like%20writing%20about%20this%2c%20but%20I%20couldn%26rsquo%3bt%20stop%20thinking%20about%20it%20so%20I%20wrote%20it%20down.%0aI%20don%26rsquo%3bt%20cover%20my%20wife%26rsquo%3bs%20relationships%27%20with%20our%20sons%2c%20but%20rest%20assured%20she%26rsquo%3bs%20very%20much%20a%20part%20of%20everything%20I%20write%20about%20below.%0aRelationships%20I%20knew%20having%20a%20kid%20would%20change%20my%20life." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&t=One%20to%20Many" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        One to Many
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2021-05-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-25</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#relationships">Relationships</a></li>
+    <li><a href="#one-to-one">One to one</a></li>
+    <li><a href="#one-to-many">One to many</a></li>
+    <li><a href="#one-to-many-polymorphic">One to many polymorphic</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="content" itemprop="articleBody">
+      <p>In this blog post I talk about how my relationship to my sons feels like data modeling. I don&rsquo;t know why I felt like writing about this, but I couldn&rsquo;t stop thinking about it so I wrote it down.</p>
+<p>I don&rsquo;t cover my wife&rsquo;s relationships' with our sons, but rest assured she&rsquo;s very much a part of everything I write about below.</p>
+<h2 id="relationships">Relationships</h2>
+<p>I knew having a kid would change my life. But, I was surprised by the impact of that change. Jasper was born in 2017. He was an easy baby and he still took up most of my free time.</p>
+<p>It&rsquo;s a cliche, but I think it&rsquo;s worth repeating: <em>Most</em> people who don&rsquo;t have kids don&rsquo;t understand what it means to be busy.</p>
+<p>I thought I was busy because I had a job, a marriage, and career goals that kept me working in the evenings. I felt like I had very little free time. After Jasper was born, I was lucky to have an hour a day of free time. Babies need to be fed, changed, bathed, and held. Most of my &ldquo;free time&rdquo; was taken up replying to emails, booking appointments, and trying to plan out a future.</p>
+<p>I&rsquo;m trying to stress how much time Jasper took in my life not because I wear it as a badge of honour, but because I want to explain that once he was born he took up a huge part of my life.</p>
+<h2 id="one-to-one">One to one</h2>
+<p>In data modeling, a one to one relationship is when one entity is related to exactly one other entity. A common example is a profile picture. On Facebook, Twitter and Instagram, you get to choose a profile picture. The user (you) has one profile picture. The profile picture has one owner (you). One to one. If someone says they like your profile picture, you don&rsquo;t need to ask which one. You only have one. You <em>can</em> only have one.</p>
+<p>When Jasper was born, I had a one to one relationship with him. He took up a lot of my life, but I got used to it pretty quickly. Before going for a walk, I would make sure to get my son ready. At lunch time, I&rsquo;d make sure he had food. When someone asked how old my son was, I could answer quickly because the answer was carved into my brain.</p>
+<p>Quickly it became difficult to imagine a life without Jasper, and I don&rsquo;t mean this is poetically. Jasper&rsquo;s constant presence changed how I thought about everything. For example, if I thought about taking a trip to Korea, my brain instantly demanded that I think about how I could do this with Jasper. Would he be ok on the plane? What would he eat? How could I take him in a taxi? My mind has been forever changed.</p>
+<h2 id="one-to-many">One to many</h2>
+<p>In data modeling, a one to many relationship is when one entity is related to one <em>or more</em> other entities. A common example is a blog post. An author has many (1+) blog posts. It&rsquo;s not enough to tell an author that you like their blog post. You have to tell them which one.</p>
+<p>Walter, my second son, was born this year, 2021.</p>
+<p>It&rsquo;s a cliche, but I think it&rsquo;s worth repeating: <em>Most</em> people who only have one kid don&rsquo;t understand what it means to be busy.</p>
+<p>Going from zero kids to one kid is a much bigger shift that one kid to two. But going from one kid to two presented problems I didn&rsquo;t anticipate.</p>
+<p>The first time I took Walter to the pediatrician, I couldn&rsquo;t remember his birthday. For 3 years the answer to &ldquo;when was your son born?&rdquo; was always the same. Now it wasn&rsquo;t.</p>
+<p>Driving home from the pediatrician, talking on the phone to my wife, she said that Jasper, my first son was doing fine. When I heard this, my brain totally forgot I had another son in the car. It sounds ridiculous, but it&rsquo;s like Jasper had lodged himself in my brain and now Walter was having to fight to get in.</p>
+<p>But, slowly, Walter has gotten in. Quickly it has become difficult to imagine a life without Walter. When my wife, Julie, takes Walter somewhere and I&rsquo;m left with only Jasper, it feels like something is missing.</p>
+<h2 id="one-to-many-polymorphic">One to many polymorphic</h2>
+<p>In data modeling, a one to many polymorphic relationship is when one entity is related to one <em>or more</em> other entities, but the other entities are not homogenous. An example of this are comments on blog posts. Some comments are written by people, but other comments are written by the blog software itself. So, while the comments behave the same way most of the time (they can be read, edited, deleted), they have significant differences. You can send an email to a commenter who is a person, but you can&rsquo;t send an email to a commenter who is just the blog software.</p>
+<p>Just when I was getting used to having a one to many relationship with my sons, we got a phone call. Walter has a genetic condition called MCADD. This means he can&rsquo;t use fat as calories. He can still have a normal life, but we/he need to be careful, especially in the first years of his life.</p>
+<p>I&rsquo;m sure eventually I would have clued in to the fact that my sons were different, but being told my a doctor that I can&rsquo;t even feed them the same way was a wake up call.</p>
+<p>So, now I have many (2) sons. In some ways I can treat them the same, and in others I can&rsquo;t. I&rsquo;m excited to revisit this post in a year&rsquo;s time and see how much has changed.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+      </ul>
+    </div>
+
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&text=One%20to%20Many" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&title=One%20to%20Many" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&is_video=false&description=One%20to%20Many" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=One%20to%20Many&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&title=One%20to%20Many" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&title=One%20to%20Many" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&name=One%20to%20Many&description=In%20this%20blog%20post%20I%20talk%20about%20how%20my%20relationship%20to%20my%20sons%20feels%20like%20data%20modeling.%20I%20don%26rsquo%3bt%20know%20why%20I%20felt%20like%20writing%20about%20this%2c%20but%20I%20couldn%26rsquo%3bt%20stop%20thinking%20about%20it%20so%20I%20wrote%20it%20down.%0aI%20don%26rsquo%3bt%20cover%20my%20wife%26rsquo%3bs%20relationships%27%20with%20our%20sons%2c%20but%20rest%20assured%20she%26rsquo%3bs%20very%20much%20a%20part%20of%20everything%20I%20write%20about%20below.%0aRelationships%20I%20knew%20having%20a%20kid%20would%20change%20my%20life." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fone-to-many%2f&t=One%20to%20Many" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Tom on the Internet Weblog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

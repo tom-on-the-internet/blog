@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Santa Cypher - A seasonal encoder | Tom on the Internet Weblog</title>
+  <link rel = 'canonical' href = 'https://blog.tomontheinternet.com/posts/santa-cypher/'>
+  <meta name="description" content="My name is Tom. This is my blog.
+
+If you read anything you like here, please [let me know](mailto:tom@tomontheinternet.com).
+
+You can learn more about me [on my website](https://tomontheinternet.com).">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Santa Cypher - A seasonal encoder" />
+<meta property="og:description" content="Full code: github.com/tom-on-the-internet/santa-cypher.
+Website here: santa-cypher.tomontheinternet.com
+Video here: Youtube
+I&rsquo;m not great at bash But I&rsquo;m trying to get better.
+People say: &ldquo;Build things in Bash to get better at Bash!&rdquo;
+Ok. Here&rsquo;s something&hellip;
+It starts with a stupid idea I wonder if I could write a program in Bash that could encode messages into Santa&rsquo;s laughter. I could send messages around that look like Holiday Cheer, but actually contain a hidden message." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tomontheinternet.com/posts/santa-cypher/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-01T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Santa Cypher - A seasonal encoder"/>
+<meta name="twitter:description" content="Full code: github.com/tom-on-the-internet/santa-cypher.
+Website here: santa-cypher.tomontheinternet.com
+Video here: Youtube
+I&rsquo;m not great at bash But I&rsquo;m trying to get better.
+People say: &ldquo;Build things in Bash to get better at Bash!&rdquo;
+Ok. Here&rsquo;s something&hellip;
+It starts with a stupid idea I wonder if I could write a program in Bash that could encode messages into Santa&rsquo;s laughter. I could send messages around that look like Holiday Cheer, but actually contain a hidden message."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://blog.tomontheinternet.com/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://blog.tomontheinternet.com/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://blog.tomontheinternet.com/posts/developer-for-three-years/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://blog.tomontheinternet.com/posts/vim-new-file-same-directory/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&text=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&title=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&is_video=false&description=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Santa%20Cypher%20-%20A%20seasonal%20encoder&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&title=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&title=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&name=Santa%20Cypher%20-%20A%20seasonal%20encoder&description=Full%20code%3a%20github.com%2ftom-on-the-internet%2fsanta-cypher.%0aWebsite%20here%3a%20santa-cypher.tomontheinternet.com%0aVideo%20here%3a%20Youtube%0aI%26rsquo%3bm%20not%20great%20at%20bash%20But%20I%26rsquo%3bm%20trying%20to%20get%20better.%0aPeople%20say%3a%20%26ldquo%3bBuild%20things%20in%20Bash%20to%20get%20better%20at%20Bash%21%26rdquo%3b%0aOk.%20Here%26rsquo%3bs%20something%26hellip%3b%0aIt%20starts%20with%20a%20stupid%20idea%20I%20wonder%20if%20I%20could%20write%20a%20program%20in%20Bash%20that%20could%20encode%20messages%20into%20Santa%26rsquo%3bs%20laughter.%20I%20could%20send%20messages%20around%20that%20look%20like%20Holiday%20Cheer%2c%20but%20actually%20contain%20a%20hidden%20message." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&t=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Santa Cypher - A seasonal encoder
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2020-12-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-12-01</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#im-not-great-at-bash">I&rsquo;m not great at bash</a></li>
+    <li><a href="#it-starts-with-a-stupid-idea">It starts with a stupid idea</a></li>
+    <li><a href="#goal">Goal</a></li>
+    <li><a href="#how-can-we-do-the-encoding">How can we do the encoding</a></li>
+    <li><a href="#but-how-can-we-do-a-look-up-in-bash">But how can we do a look up in Bash</a></li>
+    <li><a href="#using-associative-arrays-in-bash">Using associative arrays in Bash</a></li>
+    <li><a href="#now-that-we-have-our-associative-array">Now that we have our associative array</a></li>
+    <li><a href="#were-halfway-there">We&rsquo;re halfway there!</a></li>
+    <li><a href="#decoding-santa">Decoding Santa</a></li>
+    <li><a href="#suggested-use-cases">Suggested use cases</a></li>
+    <li><a href="#is-bash-really-a-good-fit-for-this-sort-of-thing">Is bash really a good fit for this sort of thing?</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="content" itemprop="articleBody">
+      <p>Full code: <a href="https://github.com/tom-on-the-internet/santa-cypher">github.com/tom-on-the-internet/santa-cypher</a>.<br>
+Website here: <a href="https://santa-cypher.tomontheinternet.com">santa-cypher.tomontheinternet.com</a><br>
+Video here: <a href="https://youtu.be/dksyFORajJA">Youtube</a></p>
+<h2 id="im-not-great-at-bash">I&rsquo;m not great at bash</h2>
+<p>But I&rsquo;m trying to get better.</p>
+<p>People say: &ldquo;Build things in Bash to get better at Bash!&rdquo;</p>
+<p>Ok.  Here&rsquo;s something&hellip;</p>
+<h2 id="it-starts-with-a-stupid-idea">It starts with a stupid idea</h2>
+<p>I wonder if I could write a program in Bash that could encode messages into Santa&rsquo;s laughter. I could send messages around that look like Holiday Cheer, but actually contain a hidden message. How hard would that be? Turns out, not hard. Sort of.</p>
+<h2 id="goal">Goal</h2>
+<p>GIVEN <code>santa</code><br>
+RETURN <code>HoHoHo🎅HoHO🎅HOHo🎅HO🎅HoHO🎅</code></p>
+<p>GIVEN <code>HoHoHo🎅HoHO🎅HOHo🎅HO🎅HoHO🎅</code><br>
+RETURN <code>SANTA</code></p>
+<h2 id="how-can-we-do-the-encoding">How can we do the encoding</h2>
+<p>Morse code!</p>
+<p><code>▄▄  (dot) = Ho</code><br>
+<code>▄▄▄ (dash) = HO</code></p>
+<p>And 🎅 can indicate the end of a letter.</p>
+<h2 id="but-how-can-we-do-a-look-up-in-bash">But how can we do a look up in Bash</h2>
+<p>Using associative arrays. Yes! Bash has them. It has since 2009.</p>
+<p>An associative array is a <code>key</code> <code>value</code> store. In Python they&rsquo;re called dictionaries. In Golang they&rsquo;re called maps. In JavaScript most of the time we use object literals, but we have maps in JavaScript now too.</p>
+<h2 id="using-associative-arrays-in-bash">Using associative arrays in Bash</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># make the array</span>
+declare -A MY_ARRAY
+
+<span style="color:#75715e"># insert into the array</span>
+MY_ARRAY<span style="color:#f92672">[</span>MY_KEY<span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;i am a value&#34;</span>
+
+<span style="color:#75715e"># access a value in the array</span>
+<span style="color:#e6db74">${</span>MY_ARRAY[MY_KEY]<span style="color:#e6db74">}</span>
+</code></pre></div><h2 id="now-that-we-have-our-associative-array">Now that we have our associative array</h2>
+<p>We can look up letters in in our array.</p>
+<p><code>S = HoHoHo🎅</code><br>
+<code>T = HO🎅</code></p>
+<p>But that means that we lose capitalization differences. <em>Fine!</em></p>
+<p>Let&rsquo;s do this: capitalize the input and throw out anything but alphanumeric characters, spaces, and a bit of punctuation.  We won&rsquo;t get 100% fidelity, but that&rsquo;s not <em>too</em> important in a cypher, right?</p>
+<p>To do this we&rsquo;ll use <code>tr</code>, a program used to &ldquo;translate or delete characters&rdquo;.</p>
+<p><code>input=$(echo &quot;$input&quot; | tr '[:lower:]' '[:upper:]' | tr -cd '[:alnum:][:space:].!?')</code></p>
+<p>So, <code>Let's talk, ok?</code> becomes <code>LETS TALK OK?</code></p>
+<p>Now we loop through each character and replace it with the Hohos from the map. Anything not in the map we leave as is. After each chunk of Hohos we&rsquo;ll add our break character: 🎅</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+
+  <span style="color:#66d9ef">for</span> <span style="color:#f92672">((</span>i <span style="color:#f92672">=</span> 0; i &lt; <span style="color:#e6db74">${#</span>input<span style="color:#e6db74">}</span>; i++<span style="color:#f92672">))</span>; <span style="color:#66d9ef">do</span>
+    char<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>input:$i:1<span style="color:#e6db74">}</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -v <span style="color:#e6db74">&#34;CYPHER[</span>$char<span style="color:#e6db74">]&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+      output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$output<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CYPHER[$char]<span style="color:#e6db74">}</span>$break_char
+    <span style="color:#66d9ef">else</span>
+      output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$output<span style="color:#e6db74">&#34;</span>$char
+    <span style="color:#66d9ef">fi</span>
+  <span style="color:#66d9ef">done</span>
+
+  echo <span style="color:#e6db74">&#34;</span>$output<span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>So now <code>SANTA</code> has become <code>HoHoHo🎅HoHO🎅HOHo🎅HO🎅HoHO🎅</code></p>
+<h2 id="were-halfway-there">We&rsquo;re halfway there!</h2>
+<p>Now we need to take our encoded message and turn it back into something <em>pretty close</em> to what it originally looked like.</p>
+<p>But first we need to figure out, given some text, should we <strong>encode</strong> it or <strong>decode</strong> it?</p>
+<p>We can check if the input only contains these characters: <code>🎅 H h O o . ! ?</code></p>
+<p>If the input only contains those characters, we can safely try to decode it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">break_char<span style="color:#f92672">=</span>🎅
+
+<span style="color:#75715e"># checks if the input is already encoded</span>
+is_hohoho<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+  stripped<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$input<span style="color:#e6db74">&#34;</span> | tr -cd <span style="color:#e6db74">&#34;</span>$break_char<span style="color:#e6db74">&#34;&#34;.!? &#34;</span>HOho<span style="color:#66d9ef">)</span>
+  <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$input<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span>$stripped<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="decoding-santa">Decoding Santa</h2>
+<p>Decoding is a bit trickier. We want to grab bunches of <code>HoHo</code>s, but stop at a 🎅. To do this we can use <code>awk</code> to grab all characters up to the 🎅. Then we look up the match in our associative array. If we are dealing with a non Santa or Hoho character, we let it through unaltered.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># decodes from hohoho</span>
+to_text<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+  output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+
+  <span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$input<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span>
+    <span style="color:#75715e"># if char is !hoHO🎅</span>
+    char<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>input:0:1<span style="color:#e6db74">}</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $char <span style="color:#f92672">=</span>~ <span style="color:#f92672">(</span>H|O|h|o|🎅<span style="color:#f92672">)</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+      string<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$input<span style="color:#e6db74">&#34;</span> | awk -F🎅 <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
+      match<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CYPHER[$string]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+      output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$output<span style="color:#e6db74">&#34;&#34;</span>$match<span style="color:#e6db74">&#34;</span>
+      chars_to_remove<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">${#</span>string<span style="color:#e6db74">}</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">))</span>
+      input<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>input:$chars_to_remove<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">else</span>
+      output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$output<span style="color:#e6db74">&#34;</span>$char
+      input<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>input:1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">fi</span>
+  <span style="color:#66d9ef">done</span>
+</code></pre></div><p>All done!</p>
+<h2 id="suggested-use-cases">Suggested use cases</h2>
+<p>There are many places that Santa Cypher could we used.</p>
+<ol>
+<li>Jokes in Slack.</li>
+<li>Jokes in Discord.</li>
+<li>Production encryption for sensitive personal information. (not really, settle down)</li>
+</ol>
+<h2 id="is-bash-really-a-good-fit-for-this-sort-of-thing">Is bash really a good fit for this sort of thing?</h2>
+<p>Almost certainly not. Bash is great for gluing other programs together, but for this type of problem a language like Go would probably be a better fit. But bash is fun and ubiquitous, so it&rsquo;s good to get comfortable with it.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+      </ul>
+    </div>
+
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&text=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&title=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&is_video=false&description=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Santa%20Cypher%20-%20A%20seasonal%20encoder&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&title=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&title=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&name=Santa%20Cypher%20-%20A%20seasonal%20encoder&description=Full%20code%3a%20github.com%2ftom-on-the-internet%2fsanta-cypher.%0aWebsite%20here%3a%20santa-cypher.tomontheinternet.com%0aVideo%20here%3a%20Youtube%0aI%26rsquo%3bm%20not%20great%20at%20bash%20But%20I%26rsquo%3bm%20trying%20to%20get%20better.%0aPeople%20say%3a%20%26ldquo%3bBuild%20things%20in%20Bash%20to%20get%20better%20at%20Bash%21%26rdquo%3b%0aOk.%20Here%26rsquo%3bs%20something%26hellip%3b%0aIt%20starts%20with%20a%20stupid%20idea%20I%20wonder%20if%20I%20could%20write%20a%20program%20in%20Bash%20that%20could%20encode%20messages%20into%20Santa%26rsquo%3bs%20laughter.%20I%20could%20send%20messages%20around%20that%20look%20like%20Holiday%20Cheer%2c%20but%20actually%20contain%20a%20hidden%20message." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fsanta-cypher%2f&t=Santa%20Cypher%20-%20A%20seasonal%20encoder" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Tom on the Internet Weblog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

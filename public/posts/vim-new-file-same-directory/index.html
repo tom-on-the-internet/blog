@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Make a New File in the Same Directory in Vim | Tom on the Internet Weblog</title>
+  <link rel = 'canonical' href = 'https://blog.tomontheinternet.com/posts/vim-new-file-same-directory/'>
+  <meta name="description" content="My name is Tom. This is my blog.
+
+If you read anything you like here, please [let me know](mailto:tom@tomontheinternet.com).
+
+You can learn more about me [on my website](https://tomontheinternet.com).">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Make a New File in the Same Directory in Vim" />
+<meta property="og:description" content="TLDR :w %:h/my-new-file.txt # write current buffer to a file in the same directory as the file you are editing :sav %:h/my-new-file.txt # save current buffer to a file in the same directory as the file you are editing Making a new file To make a new file in vim type:
+:w my-new-file.txt: enters command mode
+w writes
+my-new-file.txt is the name of the file
+The new file is written in the root directory where you opened vim." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tomontheinternet.com/posts/vim-new-file-same-directory/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-07T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Make a New File in the Same Directory in Vim"/>
+<meta name="twitter:description" content="TLDR :w %:h/my-new-file.txt # write current buffer to a file in the same directory as the file you are editing :sav %:h/my-new-file.txt # save current buffer to a file in the same directory as the file you are editing Making a new file To make a new file in vim type:
+:w my-new-file.txt: enters command mode
+w writes
+my-new-file.txt is the name of the file
+The new file is written in the root directory where you opened vim."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://blog.tomontheinternet.com/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://blog.tomontheinternet.com/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://blog.tomontheinternet.com/posts/santa-cypher/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://blog.tomontheinternet.com/posts/one-to-many/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&text=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&title=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&is_video=false&description=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&title=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&title=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&name=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim&description=TLDR%20%3aw%20%25%3ah%2fmy-new-file.txt%20%23%20write%20current%20buffer%20to%20a%20file%20in%20the%20same%20directory%20as%20the%20file%20you%20are%20editing%20%3asav%20%25%3ah%2fmy-new-file.txt%20%23%20save%20current%20buffer%20to%20a%20file%20in%20the%20same%20directory%20as%20the%20file%20you%20are%20editing%20Making%20a%20new%20file%20To%20make%20a%20new%20file%20in%20vim%20type%3a%0a%3aw%20my-new-file.txt%3a%20enters%20command%20mode%0aw%20writes%0amy-new-file.txt%20is%20the%20name%20of%20the%20file%0aThe%20new%20file%20is%20written%20in%20the%20root%20directory%20where%20you%20opened%20vim." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&t=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Make a New File in the Same Directory in Vim
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2020-12-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-12-07</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#making-a-new-file">Making a new file</a></li>
+    <li><a href="#making-a-new-file-in-the-same-directory">Making a new file in the same directory</a></li>
+    <li><a href="#why-not-use-nerd-tree">Why not use Nerd Tree?</a></li>
+    <li><a href="#why-not-use-netrw">Why not use netrw?</a></li>
+    <li><a href="#when-do-you-use-this">When do you use this?</a></li>
+    <li><a href="#thanks">Thanks</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="content" itemprop="articleBody">
+      <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">TLDR
+:w %:h/my-new-file.txt # write current buffer to a file in the same directory as the file you are editing
+:sav %:h/my-new-file.txt # save current buffer to a file in the same directory as the file you are editing
+</code></pre></div><h2 id="making-a-new-file">Making a new file</h2>
+<p>To make a new file in vim type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">my</span>-<span style="color:#a6e22e">new</span>-<span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">txt</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p><code>:</code> enters command mode<br>
+<code>w</code> writes<br>
+<code>my-new-file.txt</code> is the name of the file</p>
+<p>The new file is written in the root directory where you opened vim. So given this project structure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">├── fileA.txt
+└── somedir
+    └── fileB.txt
+</code></pre></div><p>Your new file will end up in in the root.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">├── fileA.txt
+├── my-new-file.txt
+└── somedir
+    └── fileB.txt
+</code></pre></div><p>This might not be what you want. If you want the file to be created in another directory, you can specify it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">:w somedir/my-new-file.txt
+
+├── fileA.txt
+└── somedir
+    ├── fileB.txt
+    └── my-new-file.txt
+</code></pre></div><p>This works well enough. But it gets harder if you have a deeply nested project structure. Given this structure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">├── fileA.txt
+└── somedir
+    └── otherdir
+        └── more
+            └── evenmore
+                └── wow
+                    └── fileB.txt
+</code></pre></div><p>You would have to type</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">:w somedir/otherdir/more/evenmore/wow/my-new-file.txt
+</code></pre></div><p><strong>That&rsquo;s too long.</strong></p>
+<h2 id="making-a-new-file-in-the-same-directory">Making a new file in the same directory</h2>
+<p>To make a new file in the same directory as the file you are currently editing, and with the same contents, type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">:w %:h/my-new-file.txt
+</code></pre></div><p><code>%</code> refers to the current file<br>
+<code>:h</code> removes the last component and any separator, which means <code>somedir/somename.txt</code> becomes <code>somedir</code> and <code>/my-new-file.txt</code> is the literal value to append.</p>
+<h2 id="why-not-use-nerd-tree">Why not use Nerd Tree?</h2>
+<p>I don&rsquo;t want to use Nerd Tree. I never need it, and I can&rsquo;t rely on it being installed on remote systems.</p>
+<h2 id="why-not-use-netrw">Why not use netrw?</h2>
+<p>I do. But for this it&rsquo;s faster to type the command above.</p>
+<h2 id="when-do-you-use-this">When do you use this?</h2>
+<p>Given this structure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">├── main.tom
+└── services
+    └── service1.tom
+</code></pre></div><p>and a file I&rsquo;m editing called <code>service1.tom</code> that looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">class Service1 {
+  do {
+    // logic
+  }
+}
+</code></pre></div><p>If I want to make a file called <code>service2.tom</code> that is mostly the same as <code>service1.tom</code>, I can do so by typing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">:w %:h/service2.tom
+</code></pre></div><h2 id="thanks">Thanks</h2>
+<p>Thanks to the folks at <code>/r/vim</code> who helped me understand what <code>#:h</code> was doing. <a href="https://www.reddit.com/r/vim/comments/k8lsfy/please_help_me_understand_h/">https://www.reddit.com/r/vim/comments/k8lsfy/please_help_me_understand_h/</a></p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+      </ul>
+    </div>
+
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&text=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&title=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&is_video=false&description=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim&body=Check out this article: https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&title=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&title=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&name=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim&description=TLDR%20%3aw%20%25%3ah%2fmy-new-file.txt%20%23%20write%20current%20buffer%20to%20a%20file%20in%20the%20same%20directory%20as%20the%20file%20you%20are%20editing%20%3asav%20%25%3ah%2fmy-new-file.txt%20%23%20save%20current%20buffer%20to%20a%20file%20in%20the%20same%20directory%20as%20the%20file%20you%20are%20editing%20Making%20a%20new%20file%20To%20make%20a%20new%20file%20in%20vim%20type%3a%0a%3aw%20my-new-file.txt%3a%20enters%20command%20mode%0aw%20writes%0amy-new-file.txt%20is%20the%20name%20of%20the%20file%0aThe%20new%20file%20is%20written%20in%20the%20root%20directory%20where%20you%20opened%20vim." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tomontheinternet.com%2fposts%2fvim-new-file-same-directory%2f&t=Make%20a%20New%20File%20in%20the%20Same%20Directory%20in%20Vim" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Tom on the Internet Weblog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

