@@ -5,7 +5,7 @@ theme = 'cactus'
 
 [params]
     colortheme = "dark"
-    description = "My name is Tom. This is my blog.\n\nIf you read anything you like here, please [let me know](mailto:tom@tomontheinternet.com).\n\nYou can learn more about me [on my website](https://tomontheinternet.com)."
+    description = "My name is Tom. This is my blog.\n\nYou can learn more about me [on my website](https://tomontheinternet.com)."
     showAllPostsOnHomePage = true
     tocInline = true
 
