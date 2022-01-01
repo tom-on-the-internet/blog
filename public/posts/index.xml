@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Tom on the Internet Weblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
-    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tomontheinternet.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tomontheinternet.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bye Gatsby! Hi Hugo!</title>
+      <link>https://blog.tomontheinternet.com/posts/bye-gatsby-hi-hugo/</link>
+      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tomontheinternet.com/posts/bye-gatsby-hi-hugo/</guid>
+      <description>I moved my blog from Gatsby to Hugo. I wouldn&amp;rsquo;t be writing about this if the move went poorly.
+Why I chose Gatsby I initially chose Gatsby because it promised a lot:
+ Extremely fast page loads. Image optimization. Sever rendered templates, but with React on top. A plugin for everything.  I was happy with Gatsby at first, but&amp;hellip;
+Gatsby was a bad choice for me The first issue I had with Gatsby was that it uses GraphQL to fetch data, even locally.</description>
+    </item>
+    
     <item>
       <title>Improving as a Developer</title>
       <link>https://blog.tomontheinternet.com/posts/improving-as-a-developer/</link>
