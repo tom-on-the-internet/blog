@@ -1,6 +1,6 @@
 baseURL = 'https://blog.tomontheinternet.com/'
 languageCode = 'en-ca'
-title = 'Tom on the Internet Weblog'
+title = 'Tom on the Internet Blog'
 theme = 'cactus'
 
 [params]
