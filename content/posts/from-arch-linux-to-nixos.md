@@ -8,7 +8,7 @@ draft: true
 
 Arch Linux felt like the last operating system I would ever use.
 
-I started using Arch Linux in 2020 because I wanted to understand how my operating system worked. I was told that with Arch Linux, all you got was a command prompt. You had to figure everything else on your own. That sounded insane, but intriguing.
+When I started using Arch Linux in 2020, it was because I wanted to understand how my operating system worked. I was told that with Arch Linux, all you got was a command prompt. You had to figure everything else on your own. That sounded insane, but intriguing.
 
 I quickly fell in love with Arch. I learned more about how my computer works in my first few months on Arch than I did in the year I spent on Ubuntu. Everything started coming into focus. Window managers, compositors, hotkey daemons, notification managers... I began to see these as separate parts of an operating system and the monolith broke apart.
 
@@ -28,7 +28,7 @@ I don't remember where I first heard of NixOS... it might have been Reddit, or m
 
 NixOS is similar to Arch Linux in many ways. They are both systemd based Linux operating systems that don't ship with a desktop environment. They both have a massive number of packages available.
 
-But NixOS is different than any other operating system because of how you define system configuration.
+But NixOS is different than nearly every other operating system because of how you define system configuration.
 
 ## What is "system configuration"
 
@@ -40,34 +40,35 @@ But on NixOS, your system configuration is declarative. You define how you want 
 
 Here is a small, non-exhaustive list of things that my NixOS system knows about:
 
+- audio/video (pipewire)
 - bootloader
-- hostname
-- users
-- location
-- language
 - displays
-- software (all software I use is declared)
-- shell
 - environment variables
 - git configuration
+- hostname
+- keyboard layout
+- language
+- location
 - mounting disks
+- shell
+- software (every piece of software I use is declared)
 - terminal
-- audio/video (pipewire)
+- users
 - window manager
 
-With NixOS, I have declarative configuration of how my entire system should behave. Every tweak I make to my system is in my configuration files. This means that reinstalling takes an hour or two, not a week or two.
+With NixOS, I have a declarative configuration of how my entire system should behave. Every tweak I make to my system is in my configuration files. This means that reinstalling takes an hour or two, not a week or two.
 
 Configuration can be customized to work with different computers, too. So, my work computer and personal computer share most settings, but not all. So, if I like a piece of software, I can ensure it'll be installed on my other computer the next time I use it.
 
-## How does a declarative system work?
+## How does a declarative system work
 
 I don't know. Not really. I'm still too new with NixOS. But let me describe it a bit.
 
-NixOS uses a language called Nix to describe system configuration.
+NixOS uses a language called Nix to describe system configuration. So, my system configuration is all written in Nix.
 
 > The Nix expression language is a pure, lazy, functional language. Purity means that operations in the language don't have side-effects (for instance, there is no variable assignment). Laziness means that arguments to functions are evaluated only when they are needed. Functional means that functions are “normal” values that can be passed around and manipulated in interesting ways. The language is not a full-featured, general purpose language. Its main job is to describe packages, compositions of packages, and the variability within packages.
 
-Here's a small section of one file.
+Here's a small section of one Nix file.
 
 ```nix
 { config, lib, pkgs, inputs, user, location, ... }:
@@ -111,3 +112,9 @@ Here's a small section of one file.
 I expect that you can probably deduce most of what is happening in that snippet, but the Nix language definitely takes getting used to.
 
 If I want to make a change to my system configuration, I edit a file and reapply the changes. I _don't_ modify system configuration myself. I _don't_ install packages myself. I tell Nix the state of the system I would like to see, and Nix handles the changes.
+
+## Day to day differences
+
+Running a NixOS system feels a lot like running an Arch Linux system. I can use all the same software and configure however I want. But the configuration is centralized and can be reapplied at any time.
+
+So, in some ways NixOS is just like Arch. But in terms of configuration, it feels much safer. I don't feel afraid of breaking my system, because I can always _easily_ revert to a working version. So I'm more adventurous. I can try installing something that might break my audio setup, but if things go wrong, I revert and I'm back to where I was. And reverting doesn't mean uninstalling software, removing environment variables, and praying. Removing means reverting my last git commit and reapplying.
