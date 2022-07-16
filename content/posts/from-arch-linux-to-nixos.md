@@ -207,3 +207,5 @@ Start configuring your NixOS systems. Have fun. Read other users' configuration 
 ## Any plans to return to Arch
 
 At this point, going back to Arch Linux would feel (to me!) like a step backward. Like going from Arch back to Ubuntu. I can't see myself leaving NixOS any time soon. But who knows what the future will bring.
+
+Thanks for reading!
