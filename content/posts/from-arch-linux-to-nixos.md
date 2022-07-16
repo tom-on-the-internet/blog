@@ -1,7 +1,7 @@
 ---
 title: From Arch Linux to NixOS
 date: "2022-07-10"
-draft: true
+draft: false
 ---
 
 ## I love Arch Linux
@@ -24,13 +24,15 @@ The complexity felt manageable until I had to reinstall Arch Linux. The initial 
 
 ## Have you heard of NixOS
 
-I don't remember where I first heard of NixOS... it might have been Reddit, or maybe Hacker News. But I do remember that the commenter mentioned they left Arch Linux for NixOS. This surprised me. Arch felt like the endgame... what could attract someone elsewhere? Declarative configuration.
+I don't remember where I first heard of NixOS... it might have been Reddit, or maybe Hacker News. But I do remember that the commenter mentioned they left Arch Linux for NixOS. This surprised me. Arch felt like the endgame... what could attract someone elsewhere? **Declarative configuration**.
+
+Later, a coworker mentioned that they use NixOS. I said I was on Arch. They told me that they _used to_ use Arch, but had switched to NixOS. Why? Again, **declarative configuration**.
 
 NixOS is similar to Arch Linux in many ways. They are both systemd based Linux operating systems that don't ship with a desktop environment. They both have a massive number of packages available.
 
 But NixOS is different than nearly every other operating system because of how you define system configuration.
 
-## What is "system configuration"
+## What is system configuration
 
 When you first install an operating system, it asks you for your username. It also asks where you live and what language you speak. That's system configuration.
 
@@ -118,3 +120,90 @@ If I want to make a change to my system configuration, I edit a file and reapply
 Running a NixOS system feels a lot like running an Arch Linux system. I can use all the same software and configure however I want. But the configuration is centralized and can be reapplied at any time.
 
 So, in some ways NixOS is just like Arch. But in terms of configuration, it feels much safer. I don't feel afraid of breaking my system, because I can always _easily_ revert to a working version. So I'm more adventurous. I can try installing something that might break my audio setup, but if things go wrong, I revert and I'm back to where I was. And reverting doesn't mean uninstalling software, removing environment variables, and praying. Removing means reverting my last git commit and reapplying.
+
+Another significant difference is the contents of `/bin` and `/usr/bin`.
+
+My `/bin` directory contains a single entry: `sh -> /nix/store/kqbccy5vkrnbx0jb2klzx1sl4cjxpvzh-bash-interactive-5.1-p16/bin/sh`. It's a symlink for `sh` that points to the Nix Store. The Nix Store is where nix _stores_ all my packages. It's readonly. I don't touch it. `sh` is kept in `/bin` because that's where many programs expect a POSIX compliant shell to live.
+
+My `/usr/bin` directory also contains a single entry: `env -> /nix/store/ib7q40m9vbkvqmq6lbmcwvmzxqnfmzs7-coreutils-stage4-9.1/bin/env`. Like `sh`, many programs expect `env` to be found in `/usr/bin`, so NixOS puts it there. Other than that, my "bin" directories are empty.
+
+## The Nix Store
+
+The Nix Store is located at `/nix/store` and it's where NixOS stores all of the packages. My Nix Store has 29749 entries right now. They have names like `82ydl9vg4n1pnqmj4a7p5s5hv7ns9ycr-home-manager-path/bin/mako`. They are symlinked to wherever the need to be.
+
+In `/etc/profiles/per-user/tom/bin` I have 226 entries. One of them is `mako -> /nix/store/82ydl9vg4n1pnqmj4a7p5s5hv7ns9ycr-home-manager-path/bin/mako`. You might notice that this entry points to mako from the Nix Store.
+
+So, my programs are all taken care of for me by Nix.
+
+## This sounds more complicated than Arch
+
+NixOS is fundamentally more complicated than Arch Linux. Instead of doing things the "Linux way", I need to do things the NixOS way. But I think the trade off is worth it. Sometimes additional complexity is worth it.
+
+Here's an example of the additional complexity that I think is worth it. If I wanted to install and configure git on Arch, I would use the package manager to install the git binary, and then create a `.gitconfig` file in the appropriate directory. If anything went wrong, I could review the git documentation on gitconfig.
+
+On NixOS, instead of installing the binary myself and configuring git, I write an expression.
+
+```nix
+{
+  programs = {
+    git = {
+      enable = true;
+      delta = { enable = true; };
+      extraConfig = {
+        init = { defaultBranch = "main"; };
+        help = { autocorrect = "immediate"; };
+      };
+    };
+  };
+}
+```
+
+This is more complicated because I need to learn the Nix language and review the Nix docs on how install and configure git. The advantage is that because this configuration is stored in version control, I never actually have to setup git myself again. On a new system, NixOS will do it for me. Like I said, it's a trade off.
+
+## What I don't love about NixOS
+
+I've been able to do everything on NixOS that I could on Arch (and more, because I'm not afraid of breaking things), but some things have been very difficult on NixOS.
+
+1. Installing an obscure npm package globally can be very challenging.
+1. Because NixOS manages all my dotfiles, tweaking my dotfiles requires a system rebuild. This is fast, but not as fast as just modifying a file. Honestly, I thought this would be a bigger nuisance than it has been.
+1. Configuring Neovim was an real challenge. I'm happy with where I landed, but it wasn't easy to get there.
+1. There is a lot of change happening in the Nix ecosystem. As a new user, this can be confusing.
+
+## What I love about NixOS
+
+NixOS can do things that Arch Linux can't, and can do many things that Arch can do, but in a more convenient way.
+
+1. Testing out new configurations is very easy.
+1. Testing out new software is very easy.
+1. I can roll back to working versions of my system.
+1. I can share configurations between my computers.
+1. I can read other NixOS users' configuration files. I love reading other people's dotfiles, and with NixOS I can see how they configured their entire operating system.
+1. I don't have to worry about Python anymore. I'm not a Python developer, and yet on Arch I constantly had Python programs breaking and I had to fix them. NixOS packages sandbox their dependencies, so this is no longer an issue. Python isn't in my path, but many programs I have installed are using their own versions of Python.
+
+## Who would I recommend NixOS to
+
+There are very few people I'd recommend NixOS to, but _maybe_ you are one of them.
+
+You need:
+
+1. to be a Linux user.
+1. to be comfortable with Linux and how it works.
+1. to like configuring your operating system.
+1. to have programming experience to understand Nix.
+1. to feel like declarative configuration is missing from your life.
+
+That's limiting criteria, but I was such a person.
+
+## How to get started with NixOS
+
+Give yourself time. This transition can be difficult. There's a _lot_ to learn. This is more complicated than Arch Linux in many ways. It took me about 2 weeks to configure NixOS. You might be faster. I'm 40, I have a family, and I don't get a lot of time to play.
+
+First, watch this video where Dorian explains what NixOS is: https://www.youtube.com/watch?v=oPymb2-IXbg.
+
+Next, if you like what you saw, watch this video where Matthias explains how to install NixOS. https://www.youtube.com/watch?v=AGVXJ-TIv3Y. Make sure you watch this one all the way through first before proceeding. I ended up using his flake configuration.
+
+Start configuring your NixOS systems. Have fun. Read other users' configuration files.
+
+## Any plans to return to Arch
+
+At this point, going back to Arch Linux would feel (to me!) like a step backward. Like going from Arch back to Ubuntu. I can't see myself leaving NixOS any time soon. But who knows what the future will bring.
