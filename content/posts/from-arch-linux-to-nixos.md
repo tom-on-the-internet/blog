@@ -198,9 +198,9 @@ That's limiting criteria, but I was such a person.
 
 Give yourself time. This transition can be difficult. There's a _lot_ to learn. This is more complicated than Arch Linux in many ways. It took me about 2 weeks to configure NixOS. You might be faster. I'm 40, I have a family, and I don't get a lot of time to play.
 
-First, watch this video where Dorian explains what NixOS is: https://www.youtube.com/watch?v=oPymb2-IXbg.
+First, watch this video where Dorian explains what NixOS is: [https://www.youtube.com/watch?v=oPymb2-IXbg](https://www.youtube.com/watch?v=oPymb2-IXbg).
 
-Next, if you like what you saw, watch this video where Matthias explains how to install NixOS. https://www.youtube.com/watch?v=AGVXJ-TIv3Y. Make sure you watch this one all the way through first before proceeding. I ended up using his flake configuration.
+Next, if you like what you saw, watch this video where Matthias explains how to install NixOS. [https://www.youtube.com/watch?v=AGVXJ-TIv3Y](https://www.youtube.com/watch?v=AGVXJ-TIv3Y). Make sure you watch this one all the way through first before proceeding. I ended up using his flake configuration.
 
 Start configuring your NixOS systems. Have fun. Read other users' configuration files.
 
